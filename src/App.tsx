@@ -32,7 +32,13 @@ import {
   CategoryList,
   CategoryShow,
 } from "./pages/categories";
-import { ClientShow, ClientCreate, ClientList, ClientEdit } from "./pages/clients";
+import {
+  ClientShow,
+  ClientCreate,
+  ClientList,
+  ClientEdit,
+} from "./pages/clients";
+import { ChartsList } from "./pages/charts/Charts/list";
 
 function App() {
   return (
@@ -72,6 +78,13 @@ function App() {
                     create: "/clients/create",
                     edit: "/clients/edit/:id",
                     show: "/clients/show/:id",
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  {
+                    name: "Charts",
+                    list: "/posts",
                     meta: {
                       canDelete: true,
                     },
@@ -116,6 +129,10 @@ function App() {
                       <Route path="create" element={<ClientCreate />} />
                       <Route path="edit/:id" element={<ClientEdit />} />
                       <Route path="show/:id" element={<ClientShow />} />
+                    </Route>
+                    <Route path="*" element={<ErrorComponent />} />
+                    <Route path="/posts">
+                      <Route index element={<ChartsList />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

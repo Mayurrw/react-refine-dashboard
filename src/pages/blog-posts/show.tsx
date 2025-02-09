@@ -4,6 +4,14 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
+/**
+ * This function displays a blog post with its ID, title, content, category, status, and creation date,
+ * handling loading states for category data.
+ * @returns The `BlogPostShow` component is being returned. It fetches data for a blog post and its
+ * associated category, then displays the blog post details including ID, title, content, category,
+ * status, and creation date in a show view. The category data is conditionally rendered based on
+ * whether it is still loading or not.
+ */
 export const BlogPostShow = () => {
   const { queryResult } = useShow({});
   const { data, isLoading } = queryResult;

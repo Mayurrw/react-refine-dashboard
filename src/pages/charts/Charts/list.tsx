@@ -1,5 +1,3 @@
-import { Show } from "@refinedev/antd";
-import { useShow } from "@refinedev/core";
 import React from "react";
 
 import {
@@ -16,6 +14,8 @@ import {
     Legend,
   } from "recharts";
 
+  /* The `ChartsList` component is a functional component in TypeScript React that renders multiple
+  charts using the Recharts library. Here's a breakdown of what the component is doing: */
   export const ChartsList : React.FC = () => {
     
         const data = [

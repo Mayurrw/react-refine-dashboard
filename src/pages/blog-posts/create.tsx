@@ -2,6 +2,9 @@ import { Create, useForm, useSelect } from "@refinedev/antd";
 import MDEditor from "@uiw/react-md-editor";
 import { Form, Input, Select } from "antd";
 
+/* This code snippet defines a functional component named `BlogPostCreate` in TypeScript React. Inside
+the component, it uses hooks provided by the `@refinedev/antd` library to manage form state and
+handle form submission. */
 export const BlogPostCreate = () => {
   const { formProps, saveButtonProps } = useForm({});
 

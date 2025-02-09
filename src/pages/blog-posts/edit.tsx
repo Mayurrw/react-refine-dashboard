@@ -2,6 +2,9 @@ import { Edit, useForm, useSelect } from "@refinedev/antd";
 import MDEditor from "@uiw/react-md-editor";
 import { Form, Input, Select } from "antd";
 
+/* This code snippet defines a functional component named `BlogPostEdit` that serves as a form for
+editing a blog post. Here's a breakdown of what the component is doing: */
+
 export const BlogPostEdit = () => {
   const { formProps, saveButtonProps, queryResult, formLoading } = useForm({});
 

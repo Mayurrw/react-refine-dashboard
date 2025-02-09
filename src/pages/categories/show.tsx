@@ -4,6 +4,13 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
+/**
+ * The `CategoryShow` component displays the ID and title of a record fetched using a custom hook
+ * `useShow`.
+ * @returns The `CategoryShow` component is being returned. It displays the ID and Title of a record
+ * fetched using the `useShow` hook. The component shows a loading state while fetching the data and
+ * then displays the ID and Title values once the data is loaded.
+ */
 export const CategoryShow = () => {
   const { queryResult } = useShow({});
   const { data, isLoading } = queryResult;

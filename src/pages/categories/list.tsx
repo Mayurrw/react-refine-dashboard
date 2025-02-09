@@ -8,6 +8,9 @@ import {
 import type { BaseRecord } from "@refinedev/core";
 import { Space, Table } from "antd";
 
+/* This code snippet is defining a functional component named `CategoryList` in TypeScript React.
+Inside the component, it is using the `useTable` hook from the `@refinedev/antd` library to manage
+table state and configuration. */
 export const CategoryList = () => {
   const { tableProps } = useTable({
     syncWithLocation: true,

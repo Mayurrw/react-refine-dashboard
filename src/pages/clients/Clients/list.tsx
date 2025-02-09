@@ -1,15 +1,19 @@
 import {
-    DateField,
     DeleteButton,
     EditButton,
     List,
-    MarkdownField,
     ShowButton,
     useTable,
   } from "@refinedev/antd";
   import { type BaseRecord } from "@refinedev/core";
   import { Space, Table } from "antd";
 
+/*
+* This code snippet defines a React functional component named `ClientList`. Inside the component, it
+* uses the `useTable` hook to get the `tableProps` object with the option `syncWithLocation` set to
+* `true`. The component then returns a JSX structure that renders a list using the `List` component
+* from the `@refinedev/antd` library.
+*/
 export const ClientList: React.FC = () => {
 
     const { tableProps } = useTable({

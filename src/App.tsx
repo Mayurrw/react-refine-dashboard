@@ -1,6 +1,8 @@
+// Imports
 import { Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
+import { API_DATA_URL, CREATE_DATA, EDIT_DATA, SHOW_DATA } from './constants/apiConstants';
 
 import {
   ErrorComponent,
@@ -15,6 +17,7 @@ import routerBindings, {
   NavigateToResource,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router";
+
 import dataProvider from "@refinedev/simple-rest";
 import { App as AntdApp } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
@@ -26,19 +29,16 @@ import {
   BlogPostList,
   BlogPostShow,
 } from "./pages/blog-posts";
+
 import {
   CategoryCreate,
   CategoryEdit,
   CategoryList,
   CategoryShow,
 } from "./pages/categories";
-import {
-  ClientShow,
-  ClientCreate,
-  ClientList,
-  ClientEdit,
-} from "./pages/clients";
-import { ChartsList } from "./pages/charts/Charts/list";
+
+import { ClientShow, ClientCreate, ClientList, ClientEdit } from "./pages/clients/Clients";
+import { ChartsList } from "./pages/charts/Charts";
 
 function App() {
   return (
@@ -50,14 +50,14 @@ function App() {
               <Refine
                 notificationProvider={useNotificationProvider}
                 routerProvider={routerBindings}
-                dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+                dataProvider={dataProvider(API_DATA_URL)}
                 resources={[
                   {
                     name: "blog_posts",
                     list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
+                    create: `/blog-posts/${CREATE_DATA}`,
+                    edit: `/blog-posts/${EDIT_DATA}`,
+                    show: `/blog-posts/${SHOW_DATA}`,
                     meta: {
                       canDelete: true,
                     },
@@ -65,9 +65,9 @@ function App() {
                   {
                     name: "categories",
                     list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
+                    create: `/categories/${CREATE_DATA}`,
+                    edit: `/categories/${EDIT_DATA}`,
+                    show: `/categories/${SHOW_DATA}`,
                     meta: {
                       canDelete: true,
                     },
@@ -75,19 +75,16 @@ function App() {
                   {
                     name: "clients",
                     list: "/clients",
-                    create: "/clients/create",
-                    edit: "/clients/edit/:id",
-                    show: "/clients/show/:id",
+                    create: `/clients/${CREATE_DATA}`,
+                    edit: `/clients/${EDIT_DATA}`,
+                    show: `/clients/${SHOW_DATA}`,
                     meta: {
                       canDelete: true,
                     },
                   },
                   {
                     name: "Charts",
-                    list: "/posts",
-                    meta: {
-                      canDelete: true,
-                    },
+                    list: "/posts"
                   },
                 ]}
                 options={{

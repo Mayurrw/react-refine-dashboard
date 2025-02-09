@@ -10,6 +10,8 @@ import {
 import { type BaseRecord, useMany } from "@refinedev/core";
 import { Space, Table } from "antd";
 
+/* This code snippet defines a functional component named `BlogPostList` in TypeScript React. */
+
 export const BlogPostList = () => {
   const { tableProps } = useTable({
     syncWithLocation: true,
